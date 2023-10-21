@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Custom Google Search</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css"
+    />
+    <style>
+      /* Initial styles for the element */
+      .shadow-all {
+        transition: box-shadow 0.3s; /* Add a smooth transition effect */
+        box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+      }
+    </style>
+  </head>
+
+  <body class="flex flex-col justify-between min-h-screen">
+    <div></div>
+    <div class="mt-10">
+      <div class="flex flex-col justify-center items-center">
+        <img
+          src="google.png"
+          alt="Google Logo"
+          style="height: 92px; aspect-ratio: auto 272 / 92"
+        />
+
+        <div
+          class="shadow-all my-6 flex flex-row items-center shadow-lg hover:shadow-xl rounded-full border py-1 px-2 w-5/12"
+        >
+          <button type="button" class="p-2" onclick="searchGoogle()">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Google_Magnifying_Glass.svg/1200px-Google_Magnifying_Glass.svg.png"
+              alt=""
+              class="w-6 h-6"
+            />
+          </button>
+
+          <form
+            id="search-form"
+            class="flex items-center w-full"
+            onsubmit="searchGoogle(); return false;"
+          >
+            <input
+              type="text"
+              id="search-query"
+              class="p-2 rounded-full w-full outline-none bg-white"
+              placeholder="Search Google or type a URL"
+            />
+          </form>
+        </div>
+
+        <div class="my-4 flex justify-center items-center">
+          <p class="p-2 bg-gray-50 text-black rounded-sm mx-2 hover:shadow-lg 
+          hover:border-2 hover:border-gray-700">Google Search</p>
+
+          <a
+            href="/"
+            target="_blank"
+            class="p-2 bg-gray-50 text-black rounded-sm mx-2"
+            >I'm Feeling Lucky</a
+          >
+        </div>
+
+        <div class="flex space-x-2 justify-center items-center">
+          <p class="text-gray-600 text-sm">Google offered in:</p>
+          <div class="text-blue-600 space-x-2">
+          <a href="" target="_blank" class="hover:text-purple-600">हिन्दी</a>
+          <a href="" target="_blank" class="hover:text-purple-600">বাংলা</a>
+          <a href="" target="_blank" class="hover:text-purple-600">తెలుగు</a>
+          <a href="" target="_blank" class="hover:text-purple-600">मराठी</a>
+          <a href="" target="_blank" class="hover:text-purple-600">தமிழ்</a>
+          <a href="" target="_blank" class="hover:text-purple-600">ગુજરાતી</a>
+          <a href="" target="_blank" class="hover:text-purple-600">ಕನ್ನಡ</a>
+          <a href="" target="_blank" class="hover:text-purple-600">മലയാളം</a>
+          <a href="" target="_blank" class="hover:text-purple-600">ਪੰਜਾਬੀ</a>
+        </div>
+          
+        </div>
+      </div>
+    </div>
+
+    <footer class="bg-gray-200 w-full text-gray-600 py-2">
+      <div class="py-2 px-3 border-b border-gray-300">India</div>
+
+      <div class="flex justify-between items-center py-1 px-3">
+        <div>
+          <a
+            href="https://about.google/?utm_source=google-IN&utm_medium=referral&utm_campaign=hp-footer&fg=1"
+            class="pr-4"
+            >About</a
+          >
+          <a
+            href="https://ads.google.com/intl/en_in/home/?subid=ww-ww-et-g-awa-a-g_hpafoot1_1!o2&utm_source=google.com&utm_medium=referral&utm_campaign=google_hpafooter&fg=1"
+            class="px-4"
+            >Advertising</a
+          >
+          <a href="https://www.google.com/intl/en_in/business/" class="px-4"
+            >Business</a
+          >
+          <a
+            href="https://www.google.com/search/howsearchworks/?fg=1"
+            class="px-4"
+            >How Search Works</a
+          >
+        </div>
+
+        <div>
+          <a
+            href="https://policies.google.com/privacy?hl=en-IN&fg=1"
+            class="px-4"
+            >Privacy</a
+          >
+          <a href="https://policies.google.com/terms?hl=en-IN&fg=1" class="px-4"
+            >Terms</a
+          >
+          <a href="" class="px-4">Settings</a>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      function searchGoogle() {
+        const query = document.getElementById('search-query').value;
+        const searchUrl = 'https://www.google.com/search?q=' + encodeURI(query);
+        window.open(searchUrl, '_blank'); // Use _blank to open results in a new tab
+      }
+    </script>
+  </body>
+</html>
